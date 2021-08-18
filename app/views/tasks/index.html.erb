@@ -17,26 +17,25 @@
 </ul>
 
 <%= link_to 'ログアウト', logout_path, method: :delete %>
-
 <% if @user == current_user %>
   <script>
     $(document).ready(function(){
       $('#task_name').focus();
     });
 
-    $('input[type="checkbox]').change(function() {
-        $.ajax('/tasks' + $(this).data('id'),
+    $('input[type="checkbox"]').change(function() {
+      $.ajax('/tasks/' + $(this).data('id'),
         {
-            type: 'patch',
-            data: {
-                task: {
-                    finished: $(this).prop('checked')
-                }
-            },
-            dataType: 'json'
-        })
+          type: 'patch',
+          data: {
+            task: {
+              finished: $(this).prop('checked')
+            }
+          },
+          dataType: 'json'
+        }
+      )
     });
-
   </script>
 <% end %>
 
