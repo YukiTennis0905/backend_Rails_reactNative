@@ -8,7 +8,7 @@ module SessionsHelper
     end
 
     def logged_in?
-        current_suer.present?
+        current_user.present?
     end
 
     def logout
