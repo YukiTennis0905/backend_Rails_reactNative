@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  adapter: progresql
   database: zone_web_production
   username: zone_web
   password: <%= ENV['ZONE_WEB_DATABASE_PASSWORD'] %>
